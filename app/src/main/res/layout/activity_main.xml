@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mc_white">
+
+    <!-- Content scroll -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Header profile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:src="@drawable/logo_mindcare"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ThemeOverlay.MaterialComponents"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_name_default"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/mc_text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvUserSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_sub_default"
+                        android:textSize="13sp"
+                        android:textColor="@color/mc_text_secondary"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Big card (Today) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardToday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/mc_blue">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        app:tint="@color/mc_white"
+                        android:contentDescription="@string/content_desc_info"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/session_today"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/mc_white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/session_with"
+                            android:textSize="13sp"
+                            android:textColor="@color/mc_white"/>
+
+                        <TextView
+                            android:id="@+id/tvTodayTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/session_time"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/mc_white"
+                            android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Two cards row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardMood"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/mc_blue_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="14dp"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mood_label"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/mc_text_primary"/>
+
+                        <TextView
+                            android:id="@+id/tvMoodScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mood_score"
+                            android:textStyle="bold"
+                            android:textSize="36sp"
+                            android:textColor="@color/mc_text_primary"
+                            android:layout_marginTop="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mood_note"
+                            android:textSize="12sp"
+                            android:textColor="@color/mc_text_secondary"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSchedule"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/mc_surface">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="113dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTop="@android:drawable/ic_menu_my_calendar"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:text="@string/see_schedule"
+                        android:textColor="@color/mc_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Menu Buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChooseDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/btn_choose_doctor"
+                android:textStyle="bold"
+                android:textColor="@color/mc_white"
+                app:backgroundTint="@color/mc_blue"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_menu_search"
+                app:iconTint="@color/mc_white"
+                app:iconPadding="12dp"
+                app:iconGravity="textStart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChat"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/btn_chat"
+                android:textStyle="bold"
+                android:textColor="@color/mc_blue"
+                app:backgroundTint="@color/mc_surface"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_dialog_email"
+                app:iconTint="@color/mc_blue"
+                app:iconPadding="12dp"
+                app:iconGravity="textStart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAppointment"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/btn_appointment"
+                android:textStyle="bold"
+                android:textColor="@color/mc_blue"
+                app:backgroundTint="@color/mc_surface"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_menu_my_calendar"
+                app:iconTint="@color/mc_blue"
+                app:iconPadding="12dp"
+                app:iconGravity="textStart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPayment"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/btn_payment"
+                android:textStyle="bold"
+                android:textColor="@color/mc_blue"
+                app:backgroundTint="@color/mc_surface"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_menu_send"
+                app:iconTint="@color/mc_blue"
+                app:iconPadding="12dp"
+                app:iconGravity="textStart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTips"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/btn_tips"
+                android:textStyle="bold"
+                android:textColor="@color/mc_blue"
+                app:backgroundTint="@color/mc_surface"
+                app:cornerRadius="16dp"
+                app:icon="@android:drawable/ic_menu_info_details"
+                app:iconTint="@color/mc_blue"
+                app:iconPadding="12dp"
+                app:iconGravity="textStart"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="18dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/mc_white"
+        app:itemIconTint="@color/mc_blue"
+        app:itemTextColor="@color/mc_blue"
+        app:menu="@menu/menu_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

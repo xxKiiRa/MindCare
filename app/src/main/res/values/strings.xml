@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MindCare</string>
+    <string name="MindCare">MindCare</string>
+
+    <string name="tagline_1">KONSULTASI</string>
+    <string name="tagline_2">AMAN &amp; NYAMAN</string>
+
+    <string name="mulai">Mulai</string>
+
+    <!-- Added strings for activity_main.xml -->
+    <string name="top_app_bar_title">MindCare</string>
+    <string name="top_app_bar_desc">Top App Bar</string>
+    <string name="logo_desc">MindCare Logo</string>
+
+    <string name="welcome_title">Selamat datang di MindCare 👋</string>
+    <string name="welcome_desc">Pilih dokter, chat konsultasi, atur jadwal temu, dan lakukan pembayaran dalam satu aplikasi.</string>
+
+    <string name="menu_quick">Menu Cepat</string>
+
+    <string name="action_doctor">Pilih Dokter Konsultan</string>
+    <string name="action_chat">Chat Konsultasi</string>
+    <string name="action_schedule">Jadwal Temu</string>
+    <string name="action_payment">Pembayaran</string>
+
+    <string name="emoji_doctor">👩‍⚕️</string>
+    <string name="emoji_chat">💬</string>
+    <string name="emoji_schedule">📅</string>
+    <string name="emoji_payment">💳</string>
+
+    <string name="logout_text">Logout / Keluar</string>
+    <string name="fab_contact_desc">Hubungi Kami</string>
+
+    <!-- Strings for activity_daftar_akun.xml -->
+    <string name="daftar_title">Buat Akun MindCare</string>
+    <string name="daftar_subtitle">Lengkapi data diri untuk mulai konsultasi</string>
+    <string name="hint_nama">Nama Lengkap</string>
+    <string name="hint_email">Alamat Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_daftar_text">DAFTAR SEKARANG</string>
+    <string name="already_account">Sudah punya akun? </string>
+    <string name="login_here">Masuk di sini</string>
+
+    <!-- Strings for main screen -->
+    <string name="user_name_default">Saif Brilliantoro</string>
+    <string name="user_sub_default">MindCare • Konsultasi Kesehatan Mental</string>
+
+    <string name="session_today">Sesi Hari Ini</string>
+    <string name="session_with">Konsultasi dengan dr. Psikiater</string>
+    <string name="session_time">19.30</string>
+
+    <string name="mood_label">Mood</string>
+    <string name="mood_note">Catatan Harian</string>
+    <string name="mood_score">4.0</string>
+
+    <string name="see_schedule">Lihat Jadwal</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_profile">Profil</string>
+
+    <string name="btn_choose_doctor">Pilih Dokter Konsultan</string>
+    <string name="btn_chat">Chat Konsultasi</string>
+    <string name="btn_appointment">Jadwal Temu</string>
+    <string name="btn_payment">Pembayaran</string>
+    <string name="btn_tips">Tips Kesehatan Mental</string>
+
+    <string name="content_desc_info">Info sesi</string>
+
+    <!-- Profile screen strings -->
+    <string name="profile_title">PROFILE</string>
+    <string name="profile_name">@string/user_name_default</string>
+    <string name="profile_email">MindCare User</string>
+    <string name="profile_info_button">Informasi Akun</string>
+    <string name="profile_history">Riwayat Konsultasi</string>
+    <string name="profile_settings">Settings</string>
+    <string name="profile_help">Bantuan / FAQ</string>
+    <string name="profile_logout">logout</string>
+</resources>
