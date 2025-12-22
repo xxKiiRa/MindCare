@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <activity android:name=".chat.ChatListActivity" android:exported="false" />
+    <activity android:name=".chat.ChatRoomActivity" android:exported="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
