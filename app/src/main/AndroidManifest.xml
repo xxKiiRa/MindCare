@@ -20,6 +20,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".PilihDokterActivity"
+            android:exported="false" />
+
+        <activity android:name=".DetailDokterActivity" android:exported="false" />
+
+
         <activity android:name=".Login" android:exported="false" />
         <activity android:name=".DaftarAkun" android:exported="false" />
         <activity android:name=".LupaPassword" android:exported="false" />
