@@ -74,13 +74,12 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Menu buttons (mirip gambar) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnInfoUser"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/profile_info_button"
+                android:text="@string/profile_informasi_akun"
                 android:textStyle="bold"
                 android:textColor="@color/mc_white"
                 app:backgroundTint="@color/mc_blue"

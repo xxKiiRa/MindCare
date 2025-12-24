@@ -31,7 +31,7 @@
     <string name="logout_text">Logout / Keluar</string>
     <string name="fab_contact_desc">Hubungi Kami</string>
 
-    <!-- Strings for activity_daftar_akun.xml -->
+    <!-- String untuk activity_daftar_akun.xml -->
     <string name="daftar_title">Buat Akun MindCare</string>
     <string name="daftar_subtitle">Lengkapi data diri untuk mulai konsultasi</string>
     <string name="hint_nama">Nama Lengkap</string>
@@ -41,7 +41,7 @@
     <string name="already_account">Sudah punya akun? </string>
     <string name="login_here">Masuk di sini</string>
 
-    <!-- Strings for main screen -->
+    <!-- String untuk main screen -->
     <string name="user_name_default">Saif Brilliantoro</string>
     <string name="user_sub_default">MindCare • Konsultasi Kesehatan Mental</string>
 
@@ -72,7 +72,7 @@
     <string name="profile_title">PROFILE</string>
     <string name="profile_name">@string/user_name_default</string>
     <string name="profile_email">MindCare User</string>
-    <string name="profile_info_button">Informasi Akun</string>
+    <string name="profile_informasi_akun">Informasi Akun</string>
     <string name="profile_history">Riwayat Konsultasi</string>
     <string name="profile_settings">Settings</string>
     <string name="profile_help">Bantuan / FAQ</string>
