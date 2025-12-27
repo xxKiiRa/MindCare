@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20.dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/imgDetailDoctor"
+        android:layout_width="120.dp"
+        android:layout_height="120.dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20.dp"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tvDetailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16.dp"
+        android:text="Nama Dokter"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDetailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Rp 150.000"
+        android:textColor="#005CB9"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30.dp"
+        android:text="Pilih Jadwal Konsultasi"
+        android:textStyle="bold" />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.dp"
+        android:text="Hari ini, 19:00 WIB" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnLanjutBayar"
+        android:layout_width="match_parent"
+        android:layout_height="55.dp"
+        android:backgroundTint="#005CB9"
+        android:text="KONFIRMASI &amp; BAYAR"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
