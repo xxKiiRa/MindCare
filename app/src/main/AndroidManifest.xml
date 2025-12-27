@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindCare">
-
+        <activity
+            android:name=".InformasiAkun"
+            android:exported="false" />
         <activity
             android:name=".tampilanAwal"
             android:exported="true">
