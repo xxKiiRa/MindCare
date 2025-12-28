@@ -80,4 +80,27 @@
 
     <!-- For payment history formatting -->
     <string name="payment_detail_format">%1$s • %2$s • %3$s</string>
+
+    <!-- Strings for activity_cart.xml -->
+    <string name="cart_title">Keranjang</string>
+    <string name="cart_doctor_name">Nama Dokter</string>
+    <string name="cart_doctor_spec">Spesialis</string>
+    <string name="cart_price">Rp 0</string>
+    <string name="btn_checkout">Lanjut ke Pembayaran</string>
+
+    <!-- Strings for item_dokter.xml -->
+    <string name="doctor_sample_name">dr. Sarah Amalia</string>
+    <string name="doctor_sample_specialty">Psikiater</string>
+    <string name="doctor_sample_price">Rp 150.000</string>
+    <string name="btn_choose">Pilih</string>
+
+    <!-- Misc accessibility / content descriptions -->
+    <string name="desc_doctor_image">Gambar Dokter</string>
+    <string name="btn_start_chat">Mulai Chat Baru</string>
+
+    <!-- Chat sample texts -->
+    <string name="chat_sample_name_1">dr. Sarah Amalia</string>
+    <string name="chat_sample_text_1">Bagaimana perasaan Anda hari ini?</string>
+    <string name="chat_sample_name_2">Budi Santoso, M.Psi</string>
+    <string name="chat_sample_text_2">Terima kasih, saya merasa lebih baik</string>
 </resources>
