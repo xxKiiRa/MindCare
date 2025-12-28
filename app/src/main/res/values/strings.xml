@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MindCare</string>
-    <string name="MindCare">Consult your Mind For Better Life</string>
+    <string name="MindCare">MindCare</string>
 
     <string name="tagline_1">KONSULTASI</string>
     <string name="tagline_2">AMAN &amp; NYAMAN</string>
@@ -77,5 +77,4 @@
     <string name="profile_settings">Settings</string>
     <string name="profile_help">Bantuan / FAQ</string>
     <string name="profile_logout">logout</string>
-
 </resources>

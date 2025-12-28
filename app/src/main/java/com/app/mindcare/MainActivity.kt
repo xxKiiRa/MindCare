@@ -27,9 +27,13 @@ class MainActivity : AppCompatActivity() {
             user?.displayName ?: (user?.email ?: "MindCare User")
 
         // ✅ Tombol menu Home (sementara diarahkan / toast)
+        // Cari tombolnya
         findViewById<MaterialButton?>(R.id.btnChooseDoctor)?.setOnClickListener {
-            Toast.makeText(this, "Pilih Dokter (soon)", Toast.LENGTH_SHORT).show()
-            // startActivity(Intent(this, ChooseDoctorActivity::class.java))
+            // 1. Buat Intent untuk pindah ke PilihDokterActivity
+            val intent = Intent(this, PilihDokterActivity::class.java)
+
+            // 2. Jalankan perpindahan halaman
+            startActivity(intent)
         }
 
         findViewById<MaterialButton?>(R.id.btnChat)?.setOnClickListener {

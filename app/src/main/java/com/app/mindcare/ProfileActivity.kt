@@ -30,9 +30,13 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
 
+        //-----------------------------Tombol informasi akun (Rindra)-------------------------------
+
         findViewById<MaterialButton?>(R.id.btnInfoUser)?.setOnClickListener {
-            Toast.makeText(this, "Fitur Informasi Akun (soon)", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, InformasiAkun::class.java))
         }
+        //__________________________________________________________________________________________
+
 
         findViewById<MaterialButton?>(R.id.btnHistory)?.setOnClickListener {
             Toast.makeText(this, "Riwayat Konsultasi (soon)", Toast.LENGTH_SHORT).show()

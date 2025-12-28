@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindCare">
-
+        <activity
+            android:name=".InformasiAkun"
+            android:exported="false" />
         <activity
             android:name=".tampilanAwal"
             android:exported="true">
@@ -19,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PilihDokterActivity"
+            android:exported="false" />
+
+        <activity android:name=".DetailDokterActivity" android:exported="false" />
+
 
         <activity android:name=".Login" android:exported="false" />
         <activity android:name=".DaftarAkun" android:exported="false" />
