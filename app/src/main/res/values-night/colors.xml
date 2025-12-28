@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FF000000</color>
+    <color name="mc_teal">#00B39A</color>
+    <color name="mc_text_primary">#FFFFFFFF</color>
+    <color name="mc_text_secondary">#FFBDBDBD</color>
+    <color name="mc_surface">#121212</color>
+    <color name="mc_blue_light">#263238</color>
+    <color name="mc_white">#FF000000</color>
+    <color name="mc_error">#CF6679</color>
+</resources>
+

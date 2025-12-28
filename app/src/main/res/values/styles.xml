@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Reusable button style for primary actions -->
+    <style name="Widget.MindCare.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Bottom navigation rounded shape overlay -->
+    <style name="Widget.MindCare.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">24dp</item>
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.MindCare.BottomNav.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.MindCare.BottomNav.Inactive</item>
+    </style>
+
+    <style name="TextAppearance.MindCare.BottomNav.Active" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/mc_teal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.MindCare.BottomNav.Inactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/mc_text_secondary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

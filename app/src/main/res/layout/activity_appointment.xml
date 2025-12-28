@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/mc_teal"
+        android:titleTextColor="@color/mc_white"
+        android:title="Jadwal Temu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sesi Mendatang"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Example session card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dr. Sarah Amalia • Psikiater"
+                    android:textStyle="bold"
+                    android:textColor="@color/mc_text_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19:30, 28 Desember 2025"
+                    android:textColor="@color/mc_text_secondary"
+                    android:layout_marginTop="4dp" />
+
+                <Button
+                    android:id="@+id/btnSeeDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Detail"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/mc_teal"
+                    android:textColor="@color/mc_white" />
+            </LinearLayout>
+
+            <!-- If no sessions, show friendly message (example) -->
+            <TextView
+                android:id="@+id/tvNoSessions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak ada sesi yang dijadwalkan."
+                android:textColor="@color/mc_text_secondary"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

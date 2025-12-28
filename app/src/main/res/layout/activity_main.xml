@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="18dp">
+            android:padding="20dp"
+            android:paddingBottom="88dp">
 
             <!-- Header profile -->
             <LinearLayout
@@ -33,8 +33,8 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/ivAvatar"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:src="@drawable/logo_mindcare"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/ThemeOverlay.MaterialComponents"
@@ -74,20 +74,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="18dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="@color/mc_blue">
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/mc_teal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
                     <ImageView
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:src="@android:drawable/ic_dialog_info"
                         app:tint="@color/mc_white"
                         android:contentDescription="@string/content_desc_info"/>
@@ -134,7 +134,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="14dp">
+                android:layout_marginTop="14dp"
+                android:weightSum="2">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardMood"
@@ -143,7 +144,7 @@
                     android:layout_weight="1"
                     android:layout_marginEnd="10dp"
                     app:cardCornerRadius="18dp"
-                    app:cardElevation="2dp"
+                    app:cardElevation="4dp"
                     app:cardBackgroundColor="@color/mc_blue_light">
 
                     <LinearLayout
@@ -186,14 +187,14 @@
                     android:layout_height="130dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="18dp"
-                    app:cardElevation="2dp"
+                    app:cardElevation="4dp"
                     app:cardBackgroundColor="@color/mc_surface">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="113dp"
                         android:layout_marginTop="10dp"
-                        android:drawableTop="@android:drawable/ic_menu_my_calendar"
+                        app:drawableTopCompat="@android:drawable/ic_menu_my_calendar"
                         android:drawablePadding="8dp"
                         android:gravity="center"
                         android:text="@string/see_schedule"
@@ -214,8 +215,8 @@
                 android:text="@string/btn_choose_doctor"
                 android:textStyle="bold"
                 android:textColor="@color/mc_white"
-                app:backgroundTint="@color/mc_blue"
-                app:cornerRadius="16dp"
+                app:backgroundTint="@color/mc_teal"
+                app:cornerRadius="14dp"
                 app:icon="@android:drawable/ic_menu_search"
                 app:iconTint="@color/mc_white"
                 app:iconPadding="12dp"
@@ -228,11 +229,11 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/btn_chat"
                 android:textStyle="bold"
-                android:textColor="@color/mc_blue"
+                android:textColor="@color/mc_teal"
                 app:backgroundTint="@color/mc_surface"
-                app:cornerRadius="16dp"
+                app:cornerRadius="14dp"
                 app:icon="@android:drawable/ic_dialog_email"
-                app:iconTint="@color/mc_blue"
+                app:iconTint="@color/mc_teal"
                 app:iconPadding="12dp"
                 app:iconGravity="textStart"/>
 
@@ -243,11 +244,11 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/btn_appointment"
                 android:textStyle="bold"
-                android:textColor="@color/mc_blue"
+                android:textColor="@color/mc_teal"
                 app:backgroundTint="@color/mc_surface"
-                app:cornerRadius="16dp"
+                app:cornerRadius="14dp"
                 app:icon="@android:drawable/ic_menu_my_calendar"
-                app:iconTint="@color/mc_blue"
+                app:iconTint="@color/mc_teal"
                 app:iconPadding="12dp"
                 app:iconGravity="textStart"/>
 
@@ -258,11 +259,11 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/btn_payment"
                 android:textStyle="bold"
-                android:textColor="@color/mc_blue"
+                android:textColor="@color/mc_teal"
                 app:backgroundTint="@color/mc_surface"
-                app:cornerRadius="16dp"
+                app:cornerRadius="14dp"
                 app:icon="@android:drawable/ic_menu_send"
-                app:iconTint="@color/mc_blue"
+                app:iconTint="@color/mc_teal"
                 app:iconPadding="12dp"
                 app:iconGravity="textStart"/>
 
@@ -273,11 +274,11 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/btn_tips"
                 android:textStyle="bold"
-                android:textColor="@color/mc_blue"
+                android:textColor="@color/mc_teal"
                 app:backgroundTint="@color/mc_surface"
-                app:cornerRadius="16dp"
+                app:cornerRadius="14dp"
                 app:icon="@android:drawable/ic_menu_info_details"
-                app:iconTint="@color/mc_blue"
+                app:iconTint="@color/mc_teal"
                 app:iconPadding="12dp"
                 app:iconGravity="textStart"/>
 
@@ -287,16 +288,25 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation(yg paling bawah -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:background="@color/mc_white"
-        app:itemIconTint="@color/mc_blue"
-        app:itemTextColor="@color/mc_blue"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@android:color/transparent"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/menu_bottom_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:clipToPadding="false"
+        android:elevation="8dp"
+        app:itemBackground="@drawable/bg_bottom_nav"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
