@@ -2,74 +2,89 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/bg_gradient_shape"
+    android:layoutAnimation="@anim/layout_fade_in"
+    tools:context=".tampilanAwal">
 
+    <!-- Vertical packed chain: logo -> title/group -> action button -->
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="380dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="150dp"
-        android:contentDescription="@string/MindCare"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/logo_desc"
         android:src="@drawable/logo_mindcare"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:animation="@anim/fade_in"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tvAppName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintWidth_default="spread" />
 
     <TextView
         android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/MindCare"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:textColor="@color/mc_text_primary"
+        android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
 
     <TextView
         android:id="@+id/tvTag1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
         android:text="@string/tagline_1"
         android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTag2"
+        android:textColor="@color/mc_teal"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="6dp" />
 
     <TextView
         android:id="@+id/tvTag2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
         android:text="@string/tagline_2"
         android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="26sp"
+        android:textColor="@color/mc_text_secondary"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnMulai"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvTag1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnMulai"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="56dp"
         android:text="@string/mulai"
-        android:textColor="@android:color/white"
+        android:textColor="@color/mc_white"
         android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:backgroundTint="@color/navy"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="64dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="40dp"
+        app:backgroundTint="@color/mc_teal"
+        app:strokeWidth="0dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

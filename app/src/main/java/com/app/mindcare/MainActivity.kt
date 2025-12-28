@@ -3,7 +3,6 @@ package com.app.mindcare
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
@@ -37,23 +36,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<MaterialButton?>(R.id.btnChat)?.setOnClickListener {
-            Toast.makeText(this, "Chat Konsultasi (soon)", Toast.LENGTH_SHORT).show()
-            // startActivity(Intent(this, ChatListActivity::class.java))
+            // Open ChatActivity instead of showing a Toast
+            startActivity(Intent(this, ChatActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnAppointment)?.setOnClickListener {
-            Toast.makeText(this, "Jadwal Temu (soon)", Toast.LENGTH_SHORT).show()
-            // startActivity(Intent(this, AppointmentActivity::class.java))
+            // Open AppointmentActivity
+            startActivity(Intent(this, AppointmentActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnPayment)?.setOnClickListener {
-            Toast.makeText(this, "Pembayaran (soon)", Toast.LENGTH_SHORT).show()
-            // startActivity(Intent(this, PaymentActivity::class.java))
+            // Open PaymentActivity
+            startActivity(Intent(this, PaymentActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnTips)?.setOnClickListener {
-            Toast.makeText(this, "Tips Kesehatan Mental (soon)", Toast.LENGTH_SHORT).show()
-            // startActivity(Intent(this, TipsActivity::class.java))
+            // Open TipsActivity
+            startActivity(Intent(this, TipsActivity::class.java))
         }
 
         // ✅ Bottom Nav
@@ -63,7 +62,8 @@ class MainActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.nav_home -> true
                     R.id.nav_chat -> {
-                        Toast.makeText(this@MainActivity, "Chat (soon)", Toast.LENGTH_SHORT).show()
+                        // Navigate to ChatActivity when tapping bottom nav
+                        startActivity(Intent(this@MainActivity, ChatActivity::class.java))
                         true
                     }
                     R.id.nav_profile -> {

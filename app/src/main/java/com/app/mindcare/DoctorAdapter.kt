@@ -33,20 +33,31 @@ class DoctorAdapter(private val list: List<Doctor>) : RecyclerView.Adapter<Docto
         holder.name.text = item.name
         holder.spec.text = item.specialty
         holder.price.text = item.price
-        holder.image.setImageResource(item.imageRes) // Mengambil gambar dari drawable
 
-        // 3. Logika klik tombol "Pilih"
+        // Resolve image resource id safely (item.imageRes may be Int or String)
+        val imageCandidate = item.imageRes.toString()
+        val ctx = holder.image.context
+        val maybeInt = imageCandidate.toIntOrNull()
+        val drawableId = if (maybeInt != null) {
+            maybeInt
+        } else {
+            val id = ctx.resources.getIdentifier(imageCandidate, "drawable", ctx.packageName)
+            if (id != 0) id else R.drawable.docter1
+        }
+        holder.image.setImageResource(drawableId)
+
+        // 3. Logika klik tombol "Pilih" -> langsung ke PaymentActivity dengan data dokter
         holder.btnPilih.setOnClickListener {
             val context = holder.itemView.context
 
-            // Membuat Intent untuk pindah ke DetailDokterActivity
-            val intent = Intent(context, DetailDokterActivity::class.java)
+            // Membuat Intent untuk pindah ke PaymentActivity langsung
+            val intent = Intent(context, PaymentActivity::class.java)
 
-            // Membawa data dokter yang dipilih agar muncul di halaman detail
+            // Membawa data dokter yang dipilih agar muncul di halaman pembayaran
             intent.putExtra("NAMA_DOKTER", item.name)
             intent.putExtra("SPESIALIS", item.specialty)
             intent.putExtra("HARGA", item.price)
-            intent.putExtra("GAMBAR", item.imageRes)
+            intent.putExtra("GAMBAR", drawableId)
 
             context.startActivity(intent)
         }
@@ -54,5 +65,3 @@ class DoctorAdapter(private val list: List<Doctor>) : RecyclerView.Adapter<Docto
 
     override fun getItemCount() = list.size
 }
-
-private fun ImageView.setImageResource(resId: String) {}

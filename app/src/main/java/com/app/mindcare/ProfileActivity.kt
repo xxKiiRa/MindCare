@@ -3,7 +3,6 @@ package com.app.mindcare
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.Firebase
@@ -39,15 +38,18 @@ class ProfileActivity : AppCompatActivity() {
 
 
         findViewById<MaterialButton?>(R.id.btnHistory)?.setOnClickListener {
-            Toast.makeText(this, "Riwayat Konsultasi (soon)", Toast.LENGTH_SHORT).show()
+            // Open HistoryActivity
+            startActivity(Intent(this, HistoryActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnSettings)?.setOnClickListener {
-            Toast.makeText(this, "Settings (soon)", Toast.LENGTH_SHORT).show()
+            // Open SettingsActivity
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnHelp)?.setOnClickListener {
-            Toast.makeText(this, "FAQ (soon)", Toast.LENGTH_SHORT).show()
+            // Open HelpActivity
+            startActivity(Intent(this, HelpActivity::class.java))
         }
     }
 }

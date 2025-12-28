@@ -38,6 +38,15 @@
             android:name=".MainActivity"
             android:exported="false" />
 
+        <!-- Added stub activities for "coming soon" features -->
+        <activity android:name=".ChatActivity" android:exported="false" />
+        <activity android:name=".AppointmentActivity" android:exported="false" />
+        <activity android:name=".PaymentActivity" android:exported="false" />
+        <activity android:name=".TipsActivity" android:exported="false" />
+        <activity android:name=".HistoryActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
+        <activity android:name=".HelpActivity" android:exported="false" />
+
     </application>
 
 </manifest>

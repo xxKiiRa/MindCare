@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@drawable/bg_card_rounded"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvHistDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="dr. Example" />
+
+    <TextView
+        android:id="@+id/tvHistDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail / Harga"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/mc_text_secondary" />
+
+    <TextView
+        android:id="@+id/tvHistTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2025-12-28 12:00"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/mc_text_secondary" />
+
+</LinearLayout>

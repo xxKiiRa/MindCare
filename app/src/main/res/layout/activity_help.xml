@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarHelp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/mc_teal"
+        android:titleTextColor="@color/mc_white"
+        android:title="Bantuan" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAQ"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Bagaimana cara membuat janji temu?\nA: Gunakan fitur 'Jadwal Temu' di Home untuk memilih dokter dan waktu."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Apakah data saya aman?\nA: Ya, MindCare menjaga privasi dan keamanan data pengguna."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

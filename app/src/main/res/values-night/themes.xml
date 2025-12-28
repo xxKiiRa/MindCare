@@ -1,7 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <style name="Base.Theme.MindCare" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/mc_teal</item>
+        <item name="colorOnPrimary">@color/mc_white</item>
+        <item name="materialButtonStyle">@style/Widget.MindCare.Button</item>
     </style>
+
+    <style name="Theme.MindCare" parent="Base.Theme.MindCare" />
 </resources>

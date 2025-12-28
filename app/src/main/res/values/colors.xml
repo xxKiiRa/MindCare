@@ -9,6 +9,9 @@
     <color name="mc_grey">#9E9E9E</color>
     <color name="navy">#FF000080</color>
     <color name="teal">#FF008080</color>
+    <color name="teal_200">#FF80CBC4</color>
+    <color name="teal_700">#FF00796B</color>
+    <color name="mc_teal">#018786</color>
     <!-- Added colors for daftar akun layout -->
     <color name="mc_white">#FFFFFFFF</color>
     <color name="mc_text_primary">#212121</color>
