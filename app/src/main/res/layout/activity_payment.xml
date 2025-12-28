@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarPayment"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/mc_teal"
+        android:titleTextColor="@color/mc_white"
+        android:title="Pembayaran" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Summary -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/imgDoctorSelected"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/docter1"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <TextView
+                        android:id="@+id/tvSelectedName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Dokter"
+                        android:textStyle="bold"
+                        android:textColor="@color/mc_text_primary" />
+
+                    <TextView
+                        android:id="@+id/tvSelectedSpec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spesialis"
+                        android:textColor="@color/mc_text_secondary"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvSelectedPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 0"
+                    android:textStyle="bold"
+                    android:textColor="@color/mc_text_primary" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metode Pembayaran"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rgPaymentMethods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kartu Kredit / Debit" />
+
+                <RadioButton
+                    android:id="@+id/rbBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer Bank" />
+
+                <RadioButton
+                    android:id="@+id/rbEwallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E-wallet" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnPayNow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bayar Sekarang"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/mc_teal"
+                android:textColor="@color/mc_white" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -15,9 +15,9 @@ class PilihDokterActivity : AppCompatActivity() {
 
         // Menyiapkan data contoh
         val dataDokter = listOf(
-            Doctor("dr. Sarah Amalia", "Psikiater", "Rp 150.000", "4.9"),
-            Doctor("Budi Santoso, M.Psi", "Psikolog", "Rp 100.000", "4.8"),
-            Doctor("dr. Andi Pratama", "Psikiater", "Rp 175.000", "5.0")
+            Doctor("dr. Sarah Amalia", "Psikiater", "Rp 150.000", R.drawable.docter1),
+            Doctor("Budi Santoso, M.Psi", "Psikolog", "Rp 100.000", R.drawable.docter1),
+            Doctor("dr. Andi Pratama", "Psikiater", "Rp 175.000", R.drawable.docter1)
         )
 
         // Menampilkan data ke RecyclerView
