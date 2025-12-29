@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.mindcare.R
 import com.app.mindcare.databinding.ActivityChatRoomBinding
 import com.google.firebase.Firebase
-import com.google.firebase.Timestamp
 import com.google.firebase.auth.auth
 
 import com.google.firebase.firestore.FieldValue

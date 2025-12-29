@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.app.mindcare.R
 import com.app.mindcare.databinding.ItemChatRoomBinding
 
 class ChatRoomAdapter(
@@ -20,7 +21,7 @@ class ChatRoomAdapter(
 
     inner class VH(private val b: ItemChatRoomBinding) : RecyclerView.ViewHolder(b.root) {
         fun bind(room: ChatRoom) {
-            b.tvTitle.text = "Chat Konsultasi"
+            b.tvTitle.setText(R.string.action_chat)
             b.tvSubtitle.text = room.lastMessage.ifBlank { "Mulai chat..." }
             b.root.setOnClickListener { onClick(room) }
         }

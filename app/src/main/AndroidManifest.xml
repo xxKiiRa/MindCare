@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <activity android:name=".chat.ChatListActivity" android:exported="false" />
-    <activity android:name=".chat.ChatRoomActivity" android:exported="false" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindCare">
+
+        <!-- Moved chat activities inside application -->
+        <activity android:name=".chat.ChatListActivity" android:exported="false" />
+        <activity android:name=".chat.ChatRoomActivity" android:exported="false" />
+
         <activity
             android:name=".InformasiAkun"
             android:exported="false" />
@@ -30,7 +32,6 @@
             android:exported="false" />
 
         <activity android:name=".DetailDokterActivity" android:exported="false" />
-
 
         <activity android:name=".Login" android:exported="false" />
         <activity android:name=".DaftarAkun" android:exported="false" />

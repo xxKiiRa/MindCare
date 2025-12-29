@@ -2,15 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="end"
-    android:paddingBottom="8dp">
+    android:padding="8dp"
+    android:gravity="end">
 
     <TextView
         android:id="@+id/tvMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_msg_out"
-        android:textColor="@color/mc_white"
         android:padding="12dp"
-        android:maxWidth="280dp"/>
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 </LinearLayout>
+
