@@ -44,6 +44,8 @@
 
         <!-- Added stub activities for "coming soon" features -->
         <activity android:name=".ChatActivity" android:exported="false" />
+        <!-- ChatConversationActivity: explicit activity used by ChatActivity and PaymentActivity -->
+        <activity android:name=".ChatConversationActivity" android:exported="false" />
         <activity android:name=".AppointmentActivity" android:exported="false" />
         <activity android:name=".PaymentActivity" android:exported="false" />
         <activity android:name=".TipsActivity" android:exported="false" />
