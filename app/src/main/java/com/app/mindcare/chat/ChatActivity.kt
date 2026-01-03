@@ -1,4 +1,4 @@
-package com.app.mindcare
+package com.app.mindcare.chat
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.app.mindcare.chat.ChatConversationActivity
+import com.app.mindcare.R
 
 class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,7 @@ class ChatActivity : AppCompatActivity() {
 
         val btnStart = findViewById<Button>(R.id.btnStartChat)
         btnStart?.setOnClickListener {
-            Toast.makeText(this, "Memulai chat baru... (contoh)", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Memulai chat baru... ", Toast.LENGTH_SHORT).show()
         }
 
         // Use the container IDs directly

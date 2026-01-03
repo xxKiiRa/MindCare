@@ -1,4 +1,4 @@
-package com.app.mindcare
+package com.app.mindcare.chat
 
 import android.os.Bundle
 import android.os.Handler
@@ -7,19 +7,23 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.core.content.edit
-import com.app.mindcare.chat.MessageAdapter
-import com.app.mindcare.chat.ChatMessage
+import com.app.mindcare.R
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.ArrayList
+import java.util.Date
+import java.util.Locale
+import java.util.UUID
+import kotlin.collections.iterator
 
 class ChatConversationActivity : AppCompatActivity() {
 
@@ -289,7 +293,7 @@ class ChatConversationActivity : AppCompatActivity() {
             val key = messagesKey(doctorName)
             val raw = prefs.getString(key, null) ?: ""
             val msg = if (raw.isBlank()) "(no messages stored)" else raw
-            androidx.appcompat.app.AlertDialog.Builder(this)
+            AlertDialog.Builder(this)
                 .setTitle("Saved messages for $doctorName")
                 .setMessage(msg)
                 .setPositiveButton("OK", null)
