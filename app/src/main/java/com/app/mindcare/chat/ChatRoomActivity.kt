@@ -5,8 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.mindcare.databinding.ActivityChatRoomBinding
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -16,7 +15,7 @@ class ChatRoomActivity : AppCompatActivity() {
 
     private lateinit var b: ActivityChatRoomBinding
     private val db = FirebaseFirestore.getInstance()
-    private val auth = Firebase.auth
+    private val auth = FirebaseAuth.getInstance()
 
     private lateinit var chatId: String
     private lateinit var otherUserId: String
