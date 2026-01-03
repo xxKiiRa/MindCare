@@ -10,6 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindCare">
+
+        <!-- Moved chat activities inside application -->
+        <activity android:name=".chat.ChatListActivity" android:exported="false" />
+        <activity android:name=".chat.ChatRoomActivity" android:exported="false" />
+
         <activity
             android:name=".InformasiAkun"
             android:exported="false" />
@@ -28,7 +33,6 @@
 
         <activity android:name=".DetailDokterActivity" android:exported="false" />
 
-
         <activity android:name=".Login" android:exported="false" />
         <activity android:name=".DaftarAkun" android:exported="false" />
         <activity android:name=".LupaPassword" android:exported="false" />
@@ -39,7 +43,9 @@
             android:exported="false" />
 
         <!-- Added stub activities for "coming soon" features -->
-        <activity android:name=".ChatActivity" android:exported="false" />
+        <activity android:name=".chat.ChatActivity" android:exported="false" />
+        <!-- ChatConversationActivity: explicit activity used by ChatActivity and PaymentActivity -->
+        <activity android:name=".chat.ChatConversationActivity" android:exported="false" />
         <activity android:name=".AppointmentActivity" android:exported="false" />
         <activity android:name=".PaymentActivity" android:exported="false" />
         <activity android:name=".TipsActivity" android:exported="false" />

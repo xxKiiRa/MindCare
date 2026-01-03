@@ -16,7 +16,7 @@ class AppointmentActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         findViewById<Button?>(R.id.btnSeeDetails)?.setOnClickListener {
-            Toast.makeText(this, "Menampilkan detail sesi (contoh)", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Menampilkan detail sesi..", Toast.LENGTH_SHORT).show()
         }
     }
 

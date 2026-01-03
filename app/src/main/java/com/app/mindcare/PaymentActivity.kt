@@ -1,6 +1,7 @@
 package com.app.mindcare
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -9,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.app.mindcare.chat.ChatConversationActivity
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat
@@ -66,7 +68,13 @@ class PaymentActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Pembayaran berhasil via $method", Toast.LENGTH_LONG).show()
 
-            finish() // kembali ke halaman sebelumnya
+            // Buka chat langsung setelah pembayaran
+            val i = Intent(this, ChatConversationActivity::class.java)
+            i.putExtra("doctor_name", name)
+            i.putExtra("can_chat", true)
+            startActivity(i)
+
+            finish() // tutup PaymentActivity
         }
     }
 
