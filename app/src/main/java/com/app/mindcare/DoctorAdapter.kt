@@ -7,59 +7,97 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class DoctorAdapter(private val list: List<Doctor>) : RecyclerView.Adapter<DoctorAdapter.ViewHolder>() {
+// PASTIKAN: Tidak ada import com.google.androidbrowserhelper di sini!
 
-    // 1. Hubungkan variabel dengan ID yang ada di item_dokter.xml
+class DoctorAdapter(private var list: List<Doctor>) : RecyclerView.Adapter<DoctorAdapter.ViewHolder>() {
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.tvDoctorName)
         val spec: TextView = view.findViewById(R.id.tvSpecialty)
         val price: TextView = view.findViewById(R.id.tvPrice)
-        val image: ImageView = view.findViewById(R.id.imgDoctor) // Pastikan ID ini ada di XML
-        val btnPilih: Button = view.findViewById(R.id.btnPilih)   // Pastikan ID ini ada di XML
+        val image: ImageView = view.findViewById(R.id.imgDoctor)
+        val btnPilih: Button = view.findViewById(R.id.btnPilih)
+        val onlineIndicator: View = view.findViewById(R.id.viewOnlineIndicator)
+    }
+
+    fun filterList(newList: List<Doctor>) {
+        list = newList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // Pastikan nama layoutnya benar: item_dokter atau item_doctor
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dokter, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
+        val context = holder.itemView.context
 
-        // 2. Tampilkan data ke komponen UI
+        // 1. Tampilkan Data Dasar
         holder.name.text = item.name
         holder.spec.text = item.specialty
         holder.price.text = item.price
 
-        // Resolve image resource id safely (item.imageRes may be Int or String)
-        val imageCandidate = item.imageRes.toString()
-        val ctx = holder.image.context
-        val maybeInt = imageCandidate.toIntOrNull()
-        val drawableId = if (maybeInt != null) {
-            maybeInt
-        } else {
-            val id = ctx.resources.getIdentifier(imageCandidate, "drawable", ctx.packageName)
-            if (id != 0) id else R.drawable.docter1
-        }
-        holder.image.setImageResource(drawableId)
+        // 2. Status Online (Visual)
+        holder.onlineIndicator.visibility = if (item.isOnline) View.VISIBLE else View.GONE
 
-        // 3. Logika klik tombol "Pilih" -> langsung ke PaymentActivity dengan data dokter
-        holder.btnPilih.setOnClickListener {
+        // Tambahan: Ubah tampilan tombol jika offline
+        if (item.isOnline) {
+            holder.btnPilih.alpha = 1.0f
+            holder.btnPilih.text = "Pilih"
+        } else {
+            holder.btnPilih.alpha = 0.5f
+            holder.btnPilih.text = "Offline"
+        }
+
+        // 3. Pasang Gambar
+        try {
+            holder.image.setImageResource(item.imageRes)
+        } catch (e: Exception) {
+            holder.image.setImageResource(R.drawable.docter_nimas) // Gambar default
+        }
+
+        holder.itemView.setOnClickListener {
+            // TAMBAHKAN BARIS INI: ambil context dari view yang diklik
             val context = holder.itemView.context
 
-            // Membuat Intent untuk pindah ke PaymentActivity langsung
-            val intent = Intent(context, PaymentActivity::class.java)
+            val intent = Intent(context, DetailDokterActivity::class.java)
 
-            // Membawa data dokter yang dipilih agar muncul di halaman pembayaran
-            intent.putExtra("NAMA_DOKTER", item.name)
+            intent.putExtra("NAMA", item.name)
             intent.putExtra("SPESIALIS", item.specialty)
             intent.putExtra("HARGA", item.price)
-            intent.putExtra("GAMBAR", drawableId)
+            intent.putExtra("GAMBAR", item.imageRes)
+            intent.putExtra("ONLINE", item.isOnline)
+            intent.putExtra("PENGALAMAN", item.pengalaman)
+            intent.putExtra("ALUMNUS", item.alumnus)
+            intent.putExtra("PRAKTIK", item.praktikDi)
+            intent.putExtra("STR", item.nomorStr)
 
             context.startActivity(intent)
+        }
+
+        // 5. KLIK TOMBOL PILIH (Langsung ke Payment)
+        holder.btnPilih.setOnClickListener {
+            if (item.isOnline) {
+                // Jika Online -> Lanjut Bayar
+                val intent = Intent(context, PaymentActivity::class.java)
+                intent.putExtra("PAY_NAMA", item.name)
+                intent.putExtra("PAY_SPEC", item.specialty)
+                intent.putExtra("PAY_HARGA", item.price)
+                intent.putExtra("PAY_GAMBAR", item.imageRes)
+                context.startActivity(intent)
+            } else {
+                // Jika Offline -> Tampilkan Peringatan
+                Toast.makeText(
+                    context,
+                    "Dokter ${item.name} sedang tidak aktif. Silakan pilih dokter lain.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 

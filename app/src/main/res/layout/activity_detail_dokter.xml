@@ -1,64 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20.dp"
     android:background="#FFFFFF">
 
-    <ImageView
-        android:id="@+id/imgDetailDoctor"
-        android:layout_width="120.dp"
-        android:layout_height="120.dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20.dp"
-        android:src="@drawable/ic_launcher_background" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutFooter">
 
-    <TextView
-        android:id="@+id/tvDetailName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16.dp"
-        android:text="Nama Dokter"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvDetailPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Rp 150.000"
-        android:textColor="#005CB9"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="350.dp">
 
-    <TextView
+                <ImageView
+                    android:id="@+id/imgDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dokter_andi" />
+
+                <TextView
+                    android:id="@+id/badgeOnline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_margin="16.dp"
+                    android:background="@drawable/bg_badge_online"
+                    android:paddingHorizontal="12.dp"
+                    android:paddingVertical="6.dp"
+                    android:text="● Online"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20.dp">
+
+                <TextView
+                    android:id="@+id/tvNameDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSpecDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#757575"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvPengalaman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12.dp"
+                    android:background="#F0F2F5"
+                    android:paddingHorizontal="10.dp"
+                    android:paddingVertical="4.dp"
+                    android:text="💼 8 tahun"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="20.dp"
+                    android:background="#F0F0F0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="28.dp" android:layout_height="28.dp" android:src="@drawable/ic_school" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alumnus" android:textColor="#000000" android:textStyle="bold" />
+                        <TextView android:id="@+id/tvAlumnus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Universitas..." />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="28.dp" android:layout_height="28.dp" android:src="@drawable/ic_location" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Praktik di" android:textColor="#000000" android:textStyle="bold" />
+                        <TextView android:id="@+id/tvPraktik" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lokasi..." />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="28.dp" android:layout_height="28.dp" android:src="@drawable/ic_card" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nomor STR" android:textColor="#000000" android:textStyle="bold" />
+                        <TextView android:id="@+id/tvStr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0000000000" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutFooter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30.dp"
-        android:text="Pilih Jadwal Konsultasi"
-        android:textStyle="bold" />
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="10.dp"
+        android:padding="16.dp">
 
-    <Button
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10.dp"
-        android:text="Hari ini, 19:00 WIB" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <Button
-        android:id="@+id/btnLanjutBayar"
-        android:layout_width="match_parent"
-        android:layout_height="55.dp"
-        android:backgroundTint="#005CB9"
-        android:text="KONFIRMASI &amp; BAYAR"
-        android:textColor="#FFFFFF" />
-
-</LinearLayout>
+        <Button
+            android:id="@+id/btnPilihDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih"
+            android:backgroundTint="@color/mc_teal"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_margin="16dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,19 +1,10 @@
 package com.app.mindcare
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RadioGroup
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import org.json.JSONArray
-import org.json.JSONObject
-import java.text.SimpleDateFormat
-import java.util.*
 
 class PaymentActivity : AppCompatActivity() {
 
@@ -21,85 +12,55 @@ class PaymentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
-        // Toolbar
+        // 1. Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbarPayment)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Pembayaran"
+        supportActionBar?.title = "Konfirmasi Pembayaran"
 
-        // View doctor summary
+        // 2. Hubungkan ke XML
         val img = findViewById<ImageView>(R.id.imgDoctorSelected)
         val tvName = findViewById<TextView>(R.id.tvSelectedName)
         val tvSpec = findViewById<TextView>(R.id.tvSelectedSpec)
         val tvPrice = findViewById<TextView>(R.id.tvSelectedPrice)
+        val rgPayment = findViewById<RadioGroup>(R.id.rgPaymentMethods) // Tambahkan ini
+        val btnPay = findViewById<Button>(R.id.btnPayNow)
 
-        // Read data from intent
-        val name = intent.getStringExtra("NAMA_DOKTER") ?: "-"
-        val spec = intent.getStringExtra("SPESIALIS") ?: "-"
-        val price = intent.getStringExtra("HARGA") ?: "-"
-        val imgRes = intent.getIntExtra("GAMBAR", R.drawable.docter1)
+        // 3. TANGKAP DATA (Pastikan di Adapter/Search kuncinya sama!)
+        val nama = intent.getStringExtra("PAY_NAMA") ?: "-"
+        val spec = intent.getStringExtra("PAY_SPEC") ?: "-"
+        val harga = intent.getStringExtra("PAY_HARGA") ?: "Rp 0"
+        val gambar = intent.getIntExtra("PAY_GAMBAR", R.drawable.docter_nimas)
 
-        img.setImageResource(imgRes)
-        tvName.text = name
+        // 4. Tampilkan Data
+        tvName.text = nama
         tvSpec.text = spec
-        tvPrice.text = price
+        tvPrice.text = harga
+        img.setImageResource(gambar)
 
-        // Payment method radio group
-        val rg = findViewById<RadioGroup>(R.id.rgPaymentMethods)
+        // 5. Klik Tombol Bayar
+        btnPay.setOnClickListener {
+            // Cek apakah user sudah pilih metode pembayaran
+            val selectedMethodId = rgPayment.checkedRadioButtonId
 
-        // PAY BUTTON
-        findViewById<Button>(R.id.btnPayNow).setOnClickListener {
-            val selectedId = rg.checkedRadioButtonId
-            val method = when (selectedId) {
-                R.id.rbCard -> "Kartu Kredit/Debit"
-                R.id.rbBank -> "Bank Transfer"
-                R.id.rbEwallet -> "E-Wallet"
-                else -> "Tidak Dipilih"
+            if (selectedMethodId == -1) {
+                // Jika belum pilih sama sekali
+                Toast.makeText(this, "Silakan pilih metode pembayaran dahulu!", Toast.LENGTH_SHORT).show()
+            } else {
+                // Jika sudah pilih
+                val selectedRb = findViewById<RadioButton>(selectedMethodId)
+                val namaMetode = selectedRb.text.toString()
+
+                Toast.makeText(this, "Pembayaran Berhasil via $namaMetode", Toast.LENGTH_LONG).show()
+
+                // Pindah ke Chat
+                val i = Intent(this, ChatConversationActivity::class.java)
+                i.putExtra("doctor_name", nama)
+                startActivity(i)
+
+                finish() // Tutup halaman payment agar tidak bisa back ke sini lagi
             }
-
-            if (method == "Tidak Dipilih") {
-                Toast.makeText(this, "Pilih metode pembayaran!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Save payment history
-            savePaymentRecord(this, name, spec, price, method)
-
-            Toast.makeText(this, "Pembayaran berhasil via $method", Toast.LENGTH_LONG).show()
-
-            // Buka chat langsung setelah pembayaran
-            val i = Intent(this, ChatConversationActivity::class.java)
-            i.putExtra("doctor_name", name)
-            i.putExtra("can_chat", true)
-            startActivity(i)
-
-            finish() // tutup PaymentActivity
         }
-    }
-
-    private fun savePaymentRecord(
-        context: Context,
-        doctor: String,
-        spec: String,
-        price: String,
-        method: String
-    ) {
-        val prefs = context.getSharedPreferences("mindcare_prefs", Context.MODE_PRIVATE)
-        val raw = prefs.getString("payment_history", null)
-        val arr = if (raw != null) JSONArray(raw) else JSONArray()
-
-        val obj = JSONObject()
-        obj.put("doctor", doctor)
-        obj.put("spec", spec)
-        obj.put("price", price)
-        obj.put("method", method)
-
-        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-        obj.put("time", sdf.format(Date()))
-
-        arr.put(obj)
-
-        prefs.edit().putString("payment_history", arr.toString()).apply()
     }
 
     override fun onSupportNavigateUp(): Boolean {

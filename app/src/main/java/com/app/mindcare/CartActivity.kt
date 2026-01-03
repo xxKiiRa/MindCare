@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.androidbrowserhelper.playbilling.provider.PaymentActivity
 
 class CartActivity : AppCompatActivity() {
 
@@ -27,7 +28,7 @@ class CartActivity : AppCompatActivity() {
         val name = intent.getStringExtra("NAMA_DOKTER") ?: "-"
         val spec = intent.getStringExtra("SPESIALIS") ?: "-"
         val price = intent.getStringExtra("HARGA") ?: "-"
-        val imgRes = intent.getIntExtra("GAMBAR", R.drawable.docter1)
+        val imgRes = intent.getIntExtra("GAMBAR", R.drawable.docter_nimas)
 
         img.setImageResource(imgRes)
         tvName.text = name

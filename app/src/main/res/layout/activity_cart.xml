@@ -27,7 +27,7 @@
                 android:id="@+id/imgCartDoctor"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/docter1"
+                android:src="@drawable/docter_nimas"
                 android:contentDescription="@string/cart_doctor_name"
                 android:layout_marginEnd="12dp" />
 

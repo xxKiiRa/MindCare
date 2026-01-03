@@ -4,5 +4,10 @@ data class Doctor(
     val name: String,
     val specialty: String,
     val price: String,
-    val imageRes: Int // resource id for drawable
+    val imageRes: Int,
+    val isOnline: Boolean,
+    val pengalaman: String,
+    val alumnus: String,
+    val praktikDi: String,
+    val nomorStr: String
 )
