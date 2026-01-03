@@ -17,7 +17,7 @@
             android:id="@+id/header_bg"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/mc_blue"
+            android:background="@color/mc_teal"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
@@ -109,18 +109,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Simpan Profil"
-                android:backgroundTint="@color/mc_blue"
+                android:backgroundTint="@color/mc_teal"
                 app:cornerRadius="8dp" />
-
-            <Button
-                android:id="@+id/btn_logout"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#F44336"
-                android:text="Logout"
-                app:cornerRadius="8dp" />
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

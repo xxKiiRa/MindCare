@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.app.mindcare.chat.ChatConversationActivity
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.SimpleDateFormat

@@ -5,19 +5,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.mindcare.databinding.ActivityChatRoomBinding
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
-
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-
+import com.google.firebase.firestore.SetOptions
 
 class ChatRoomActivity : AppCompatActivity() {
 
     private lateinit var b: ActivityChatRoomBinding
     private val db = FirebaseFirestore.getInstance()
-    private val auth = Firebase.auth
+    private val auth = FirebaseAuth.getInstance()
 
     private lateinit var chatId: String
     private lateinit var otherUserId: String
@@ -87,7 +85,7 @@ class ChatRoomActivity : AppCompatActivity() {
                 "lastMessage" to text,
                 "lastSenderId" to myId,
                 "updatedAt" to FieldValue.serverTimestamp()
-            ), com.google.firebase.firestore.SetOptions.merge())
+            ), SetOptions.merge())
         }.addOnFailureListener {
             Toast.makeText(this, "Gagal mengirim: ${it.message}", Toast.LENGTH_SHORT).show()
         }

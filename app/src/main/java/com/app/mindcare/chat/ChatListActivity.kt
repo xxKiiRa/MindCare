@@ -2,21 +2,19 @@ package com.app.mindcare.chat
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.mindcare.R
 import com.app.mindcare.databinding.ActivityChatListBinding
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-
 
 class ChatListActivity : AppCompatActivity() {
 
     private lateinit var b: ActivityChatListBinding
     private val db = FirebaseFirestore.getInstance()
-    private val auth = Firebase.auth
+    private val auth = FirebaseAuth.getInstance()
 
     private val adapter = ChatRoomAdapter { chat ->
         // buka chat room, tentukan lawan chat (doctor/patient)
@@ -53,7 +51,7 @@ class ChatListActivity : AppCompatActivity() {
                 } ?: emptyList()
 
                 adapter.submitList(rooms)
-                b.tvEmpty.visibility = if (rooms.isEmpty()) android.view.View.VISIBLE else android.view.View.GONE
+                b.tvEmpty.visibility = if (rooms.isEmpty()) View.VISIBLE else View.GONE
             }
     }
 }

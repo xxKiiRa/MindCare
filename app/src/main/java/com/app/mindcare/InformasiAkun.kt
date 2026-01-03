@@ -1,7 +1,5 @@
-
 package com.app.mindcare
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
@@ -16,7 +14,7 @@ class InformasiAkun : AppCompatActivity() {
     private lateinit var etNama: TextInputEditText
     private lateinit var etEmail: TextInputEditText
     private lateinit var btnSave: Button
-    private lateinit var btnLogout: Button
+    // Hapus lateinit btnLogout karena di XML activity_informasi_akun tidak ada tombol logout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +23,11 @@ class InformasiAkun : AppCompatActivity() {
         etNama = findViewById(R.id.et_nama)
         etEmail = findViewById(R.id.et_email)
         btnSave = findViewById(R.id.btn_save)
-        btnLogout = findViewById(R.id.btn_logout)
+
+        // Tambahkan fungsi tombol back (Jika Anda ingin menambahkan tombol back di header)
+        // findViewById<android.view.View?>(R.id.btnBack)?.setOnClickListener {
+        //    onBackPressedDispatcher.onBackPressed()
+        // }
 
         loadUserData()
         setupAction()
@@ -33,7 +35,6 @@ class InformasiAkun : AppCompatActivity() {
 
     private fun loadUserData() {
         val user = Firebase.auth.currentUser
-
         if (user != null) {
             etNama.setText(user.displayName)
             etEmail.setText(user.email)
@@ -41,8 +42,7 @@ class InformasiAkun : AppCompatActivity() {
     }
 
     private fun setupAction() {
-
-        // tombol untuk Simpan nama lu
+        // Tombol Simpan
         btnSave.setOnClickListener {
             val namaBaru = etNama.text.toString().trim()
 
@@ -62,7 +62,7 @@ class InformasiAkun : AppCompatActivity() {
                         .setTitle("Berhasil")
                         .setMessage("Profil berhasil diperbarui")
                         .setPositiveButton("OK") { _, _ ->
-                            finish() // balik ke ProfileActivity.kt kyknya
+                            finish() // Kembali ke ProfileActivity
                         }
                         .show()
                 }
@@ -73,20 +73,6 @@ class InformasiAkun : AppCompatActivity() {
                         .setPositiveButton("OK", null)
                         .show()
                 }
-        }
-
-        //tombol logout (sementara dlu)
-        btnLogout.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Apakah kamu yakin ingin logout?")
-                .setPositiveButton("Ya") { _, _ ->
-                    Firebase.auth.signOut()
-                    startActivity(Intent(this, Login::class.java))
-                    finishAffinity()
-                }
-                .setNegativeButton("Batal", null)
-                .show()
         }
     }
 }

@@ -12,7 +12,8 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    // Allow project-level repositories when necessary (prevents "prefer settings" failures)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
@@ -21,4 +22,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "MindCare"
 include(":app")
- 

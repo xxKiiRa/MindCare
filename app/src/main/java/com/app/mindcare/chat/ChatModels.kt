@@ -1,5 +1,20 @@
 package com.app.mindcare.chat
 
-// This file was a duplicate ChatMessage declaration and is intentionally left empty.
-// The canonical ChatMessage and ChatRoom models live in
-// app/src/main/java/com/app/mindcare/ChatModels.kt
+import com.google.firebase.Timestamp
+
+data class ChatRoom(
+    val chatId: String = "",
+    val patientId: String = "",
+    val doctorId: String = "",
+    val participants: List<String> = emptyList(),
+    val lastMessage: String = "",
+    val lastSenderId: String = "",
+    val updatedAt: Timestamp? = null
+)
+
+data class ChatMessage(
+    val id: String = "",
+    val senderId: String = "",
+    val text: String = "",
+    val createdAt: Timestamp? = null
+)
