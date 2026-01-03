@@ -30,7 +30,6 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Example session card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +62,6 @@
                     android:textColor="@color/mc_white" />
             </LinearLayout>
 
-            <!-- If no sessions, show friendly message (example) -->
             <TextView
                 android:id="@+id/tvNoSessions"
                 android:layout_width="wrap_content"

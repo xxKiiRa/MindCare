@@ -34,7 +34,6 @@ class CartActivity : AppCompatActivity() {
         tvSpec.text = spec
         tvPrice.text = price
 
-        // button lanjut ke pembayaran
         findViewById<Button>(R.id.btnCheckout).setOnClickListener {
             val i = Intent(this, PaymentActivity::class.java)
             i.putExtra("NAMA_DOKTER", name)

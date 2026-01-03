@@ -22,37 +22,36 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
         val user = auth.currentUser
 
-        // ✅ Set nama user di header (kalau id-nya ada)
+        //   nama user di header
         findViewById<TextView?>(R.id.tvUserName)?.text =
             user?.displayName ?: (user?.email ?: "MindCare User")
 
-        // ✅ Tombol menu Home (sementara diarahkan / toast)
-        // Cari tombolnya
+        //  Tombol menu Home (sementara diarahkan / toast)
+
         findViewById<MaterialButton?>(R.id.btnChooseDoctor)?.setOnClickListener {
-            // 1. Buat Intent untuk pindah ke PilihDokterActivity
+
             val intent = Intent(this, PilihDokterActivity::class.java)
 
-            // 2. Jalankan perpindahan halaman
             startActivity(intent)
         }
 
         findViewById<MaterialButton?>(R.id.btnChat)?.setOnClickListener {
-            // Open ChatActivity instead of showing a Toast
+
             startActivity(Intent(this, ChatActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnAppointment)?.setOnClickListener {
-            // Open AppointmentActivity
+
             startActivity(Intent(this, AppointmentActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnPayment)?.setOnClickListener {
-            // Open PaymentActivity
+
             startActivity(Intent(this, PaymentActivity::class.java))
         }
 
         findViewById<MaterialButton?>(R.id.btnTips)?.setOnClickListener {
-            // Open TipsActivity
+
             startActivity(Intent(this, TipsActivity::class.java))
         }
 
@@ -63,7 +62,6 @@ class MainActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.nav_home -> true
                     R.id.nav_chat -> {
-                        // Navigate to ChatActivity when tapping bottom nav
                         startActivity(Intent(this@MainActivity, ChatActivity::class.java))
                         true
                     }
@@ -79,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        // ✅ Cegah masuk home kalau belum login
+        // no no masuk kalau blm login
         if (Firebase.auth.currentUser == null) {
             startActivity(Intent(this, Login::class.java))
             finish()

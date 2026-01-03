@@ -30,7 +30,6 @@ class InformasiAkun : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
     private var imageUri: Uri? = null
 
-    // === Gallery Picker (NEW API) ===
     private val pickImage =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             if (uri != null) {
@@ -56,7 +55,6 @@ class InformasiAkun : AppCompatActivity() {
         setupAction()
     }
 
-    // ================= LOAD USER =================
     private fun loadUserData() {
         val user = Firebase.auth.currentUser ?: return
 
@@ -76,7 +74,6 @@ class InformasiAkun : AppCompatActivity() {
             }
     }
 
-    // ================= SAVE =================
     private fun setupAction() {
         btnSave.setOnClickListener {
             val nama = etNama.text.toString().trim()
@@ -91,7 +88,6 @@ class InformasiAkun : AppCompatActivity() {
         }
     }
 
-    // ================= UPDATE AUTH =================
     private fun updateAuthProfile(uid: String, nama: String) {
         Firebase.auth.currentUser!!
             .updateProfile(
@@ -107,7 +103,7 @@ class InformasiAkun : AppCompatActivity() {
             }
     }
 
-    // ================= FIRESTORE =================
+    //  FIRESTORE (buat foto profil )
     private fun saveToFirestore(uid: String, nama: String) {
         val data = hashMapOf<String, Any>(
             "nama" to nama,
@@ -139,14 +135,14 @@ class InformasiAkun : AppCompatActivity() {
             }
     }
 
-    // ================= IMAGE TO BASE64 =================
+    // ganti image jadi base64
     private fun uriToBase64(uri: Uri): String {
         val inputStream = contentResolver.openInputStream(uri)
             ?: throw Exception("InputStream null")
 
         val bitmap = BitmapFactory.decodeStream(inputStream)
 
-        // Resize kecil (AMAN untuk Firestore)
+
         val resized = Bitmap.createScaledBitmap(bitmap, 300, 300, true)
 
         val output = ByteArrayOutputStream()
@@ -155,7 +151,6 @@ class InformasiAkun : AppCompatActivity() {
         return Base64.encodeToString(output.toByteArray(), Base64.NO_WRAP)
     }
 
-    // ================= ERROR =================
     private fun showError(msg: String) {
         AlertDialog.Builder(this)
             .setTitle("Error")

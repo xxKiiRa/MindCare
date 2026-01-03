@@ -18,7 +18,6 @@ class Login : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
-        // auth harus sudah di-init sebelum dipakai
         if (!::auth.isInitialized) auth = Firebase.auth
 
         val currentUser = auth.currentUser

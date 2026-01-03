@@ -13,14 +13,13 @@ class PilihDokterActivity : AppCompatActivity() {
 
         val rvDoctor = findViewById<RecyclerView>(R.id.rvDoctor)
 
-        // Menyiapkan data contoh
+
         val dataDokter = listOf(
             Doctor("dr. Sarah Amalia", "Psikiater", "Rp 150.000", R.drawable.docter1),
             Doctor("Budi Santoso, M.Psi", "Psikolog", "Rp 100.000", R.drawable.docter1),
             Doctor("dr. Andi Pratama", "Psikiater", "Rp 175.000", R.drawable.docter1)
         )
 
-        // Menampilkan data ke RecyclerView
         rvDoctor.layoutManager = LinearLayoutManager(this)
         rvDoctor.adapter = DoctorAdapter(dataDokter)
     }
