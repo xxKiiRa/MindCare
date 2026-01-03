@@ -29,7 +29,7 @@ class ProfileActivity : AppCompatActivity() {
         tvName.text = user?.displayName ?: "MindCare User"
         tvEmail.text = user?.email ?: "—"
 
-        // 🔥 LOAD FOTO DARI FIRESTORE (BASE64)
+
         user?.uid?.let { uid ->
             db.collection("users").document(uid).get()
                 .addOnSuccessListener { doc ->

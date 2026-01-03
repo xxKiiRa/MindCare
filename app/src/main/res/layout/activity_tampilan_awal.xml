@@ -9,7 +9,6 @@
     android:layoutAnimation="@anim/layout_fade_in"
     tools:context=".tampilanAwal">
 
-    <!-- Vertical packed chain: logo -> title/group -> action button -->
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="0dp"

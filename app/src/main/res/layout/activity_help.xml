@@ -28,23 +28,59 @@
                 android:text="FAQ"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="12dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q: Bagaimana cara membuat janji temu?\nA: Gunakan fitur 'Jadwal Temu' di Home untuk memilih dokter dan waktu."
+                android:text="Q: Bagaimana cara membuat janji temu?\nA: Gunakan fitur 'Jadwal Temu' di Home untuk memilih dokter dan waktu yang tersedia."
                 android:layout_marginBottom="12dp"
                 android:textColor="@color/mc_text_secondary" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q: Apakah data saya aman?\nA: Ya, MindCare menjaga privasi dan keamanan data pengguna."
+                android:text="Q: Apakah data saya aman?\nA: Ya. MindCare menjaga privasi dan keamanan data pengguna dengan sistem autentikasi dan enkripsi."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Apakah saya bisa mengganti data profil?\nA: Bisa. Masuk ke menu Profil lalu pilih Edit Profil untuk memperbarui data Anda."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Bagaimana cara mengganti foto profil?\nA: Buka menu Profil → Edit Profil, lalu klik foto profil untuk menggantinya."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Apakah MindCare bisa digunakan gratis?\nA: Ya. Sebagian besar fitur MindCare dapat digunakan secara gratis."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Saya lupa kata sandi, apa yang harus dilakukan?\nA: Gunakan fitur Lupa Password di halaman Login untuk mereset kata sandi Anda."
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/mc_text_secondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q: Bagaimana cara menghubungi layanan bantuan?\nA: Anda dapat menghubungi tim MindCare melalui menu Pusat Bantuan di aplikasi."
                 android:layout_marginBottom="12dp"
                 android:textColor="@color/mc_text_secondary" />
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

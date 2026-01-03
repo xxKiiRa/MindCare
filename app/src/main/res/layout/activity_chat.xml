@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Example chat item 1 -->
             <LinearLayout
                 android:id="@+id/chatItem1"
                 android:layout_width="match_parent"
@@ -71,7 +70,6 @@
                     android:textColor="@color/mc_text_secondary" />
             </LinearLayout>
 
-            <!-- Example chat item 2 -->
             <LinearLayout
                 android:id="@+id/chatItem2"
                 android:layout_width="match_parent"
@@ -119,7 +117,6 @@
                     android:textColor="@color/mc_text_secondary" />
             </LinearLayout>
 
-            <!-- Button to start new chat -->
             <Button
                 android:id="@+id/btnStartChat"
                 android:layout_width="match_parent"

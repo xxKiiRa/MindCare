@@ -22,19 +22,16 @@ class PaymentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
-        // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbarPayment)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Pembayaran"
 
-        // View doctor summary
         val img = findViewById<ImageView>(R.id.imgDoctorSelected)
         val tvName = findViewById<TextView>(R.id.tvSelectedName)
         val tvSpec = findViewById<TextView>(R.id.tvSelectedSpec)
         val tvPrice = findViewById<TextView>(R.id.tvSelectedPrice)
 
-        // Read data from intent
         val name = intent.getStringExtra("NAMA_DOKTER") ?: "-"
         val spec = intent.getStringExtra("SPESIALIS") ?: "-"
         val price = intent.getStringExtra("HARGA") ?: "-"
@@ -45,10 +42,10 @@ class PaymentActivity : AppCompatActivity() {
         tvSpec.text = spec
         tvPrice.text = price
 
-        // Payment method radio group
+        // Payment
         val rg = findViewById<RadioGroup>(R.id.rgPaymentMethods)
 
-        // PAY BUTTON
+
         findViewById<Button>(R.id.btnPayNow).setOnClickListener {
             val selectedId = rg.checkedRadioButtonId
             val method = when (selectedId) {
@@ -74,7 +71,7 @@ class PaymentActivity : AppCompatActivity() {
             i.putExtra("can_chat", true)
             startActivity(i)
 
-            finish() // tutup PaymentActivity
+            finish()
         }
     }
 
