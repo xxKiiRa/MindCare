@@ -51,7 +51,7 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.btnBack).setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         findViewById<View>(R.id.menuPersonalInfo).setOnClickListener {
