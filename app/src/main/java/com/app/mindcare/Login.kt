@@ -18,8 +18,10 @@ class Login : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
+        // Inisialisasi Firebase Auth jika belum
         if (!::auth.isInitialized) auth = Firebase.auth
 
+        // Cek jika user sudah login, langsung arahkan ke Home (MainActivity)
         val currentUser = auth.currentUser
         if (currentUser != null) {
             startActivity(Intent(this, MainActivity::class.java))
@@ -33,6 +35,7 @@ class Login : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        // Inisialisasi komponen UI
         val tilEmail = findViewById<TextInputLayout>(R.id.til_email)
         val etEmail = findViewById<TextInputEditText>(R.id.et_email)
         val tilPassword = findViewById<TextInputLayout>(R.id.til_password)
@@ -42,13 +45,16 @@ class Login : AppCompatActivity() {
         val tvRegister = findViewById<TextView>(R.id.tv_register_link)
         val tvForgot = findViewById<TextView>(R.id.tv_forgot_pass)
 
+        // Logika saat tombol login ditekan
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString()
 
+            // Reset error message
             tilEmail.error = null
             tilPassword.error = null
 
+            // Validasi input kosong
             if (email.isEmpty()) {
                 tilEmail.error = "Email harus diisi"
                 return@setOnClickListener
@@ -58,6 +64,7 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Proses login via Firebase
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -70,10 +77,12 @@ class Login : AppCompatActivity() {
                 }
         }
 
+        // Navigasi ke halaman Register
         tvRegister.setOnClickListener {
             startActivity(Intent(this, DaftarAkun::class.java))
         }
 
+        // Navigasi ke halaman Lupa Password
         tvForgot.setOnClickListener {
             startActivity(Intent(this, LupaPassword::class.java))
         }
